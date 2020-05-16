@@ -1,5 +1,9 @@
 import 'package:covid19_tracker_application/models/models.dart';
 import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+import '../models/general_data_model.dart';
 
 class ApiClient {
   static const url = 'https://api.covid19india.org/data.json';
@@ -18,5 +22,23 @@ class ApiClient {
       print(e.error);
       throw e.error;
     }
+  }
+
+  fetchTotalData() async {
+    http.Response response =
+        await http.get('https://api.covid19india.org/data.json');
+    return json.decode(response.body);
+  }
+
+  fetchchartData() async {
+    http.Response response =
+        await http.get('https://api.covid19india.org/data.json');
+    return json.decode(response.body)['cases_time_series'];
+  }
+
+  fetchTestData() async {
+    http.Response response = await http
+        .get('https://api.rootnet.in/covid19-in/stats/testing/latest');
+    return json.decode(response.body);
   }
 }

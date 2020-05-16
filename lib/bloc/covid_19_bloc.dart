@@ -5,6 +5,8 @@ import 'package:covid19_tracker_application/repositories/repositories.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
+import '../models/general_data_model.dart';
+
 abstract class Covid_19Event extends Equatable {
   const Covid_19Event();
 }
@@ -34,11 +36,17 @@ class CaseLoaded extends Covid_19State {
   final CasesTimeSery casesTimeSery;
   final Statewise statewise;
   final Tested tested;
+  final totalData;
+  final List chartData;
+  final Map testData;
 
   CaseLoaded({
     @required this.casesTimeSery,
     @required this.statewise,
     @required this.tested,
+    @required this.totalData,
+    @required this.chartData,
+    @required this.testData,
   });
 
   @override
@@ -46,6 +54,9 @@ class CaseLoaded extends Covid_19State {
         casesTimeSery,
         statewise,
         tested,
+        totalData,
+        chartData,
+        testData,
       ];
 }
 
@@ -73,11 +84,17 @@ class Covid_19Bloc extends Bloc<Covid_19Event, Covid_19State> {
     yield CaseLoading();
     try {
       final allData = await apiRepository.getAllData();
+      final totalData = await apiRepository.fetchTotalData();
+      final List chartData = await apiRepository.fetchChartData();
+      final Map testData = await apiRepository.fetchTestData();
       print(allData);
       yield CaseLoaded(
         statewise: allData.statewise[0],
         casesTimeSery: allData.casesTimeSeries[0],
         tested: allData.tested[0],
+        totalData: totalData,
+        chartData: chartData,
+        testData: testData,
       );
     } catch (_) {
       yield CaseError();
