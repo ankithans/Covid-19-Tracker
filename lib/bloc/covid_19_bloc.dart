@@ -39,6 +39,9 @@ class CaseLoaded extends Covid_19State {
   final totalData;
   final List chartData;
   final Map testData;
+  final List statesLength;
+  final stateDailyData;
+  final List stateDailyDataLength;
 
   CaseLoaded({
     @required this.casesTimeSery,
@@ -47,6 +50,9 @@ class CaseLoaded extends Covid_19State {
     @required this.totalData,
     @required this.chartData,
     @required this.testData,
+    @required this.statesLength,
+    @required this.stateDailyData,
+    @required this.stateDailyDataLength,
   });
 
   @override
@@ -57,6 +63,7 @@ class CaseLoaded extends Covid_19State {
         totalData,
         chartData,
         testData,
+        stateDailyData,
       ];
 }
 
@@ -87,6 +94,10 @@ class Covid_19Bloc extends Bloc<Covid_19Event, Covid_19State> {
       final totalData = await apiRepository.fetchTotalData();
       final List chartData = await apiRepository.fetchChartData();
       final Map testData = await apiRepository.fetchTestData();
+      final List statesLength = await apiRepository.fetchStatesLength();
+      final stateDailyData = await apiRepository.fetchStatesDailyData();
+      final List stateDailyDataLength =
+          await apiRepository.fetchStatesDailyDataLength();
       print(allData);
       yield CaseLoaded(
         statewise: allData.statewise[0],
@@ -95,6 +106,9 @@ class Covid_19Bloc extends Bloc<Covid_19Event, Covid_19State> {
         totalData: totalData,
         chartData: chartData,
         testData: testData,
+        statesLength: statesLength,
+        stateDailyData: stateDailyData,
+        stateDailyDataLength: stateDailyDataLength,
       );
     } catch (_) {
       yield CaseError();

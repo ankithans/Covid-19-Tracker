@@ -17,7 +17,7 @@ class DailyCases extends StatelessWidget {
           // vertical: ScreenUtil().setWidth(50),
         ),
         child: Container(
-          height: 950.w,
+          height: 1000.w,
           decoration: BoxDecoration(
             color: Colors.grey[200],
             borderRadius: BorderRadius.circular(30.w),

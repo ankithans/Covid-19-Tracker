@@ -36,9 +36,27 @@ class ApiClient {
     return json.decode(response.body)['cases_time_series'];
   }
 
+  fetchStatesLengthData() async {
+    http.Response response =
+        await http.get('https://api.covid19india.org/data.json');
+    return json.decode(response.body)['statewise'];
+  }
+
   fetchTestData() async {
     http.Response response = await http
         .get('https://api.rootnet.in/covid19-in/stats/testing/latest');
     return json.decode(response.body);
+  }
+
+  fetchStatesDailyData() async {
+    http.Response response =
+        await http.get('https://api.covid19india.org/states_daily.json');
+    return json.decode(response.body);
+  }
+
+  fetchStatesDailyDataLength() async {
+    http.Response response =
+        await http.get('https://api.covid19india.org/states_daily.json');
+    return json.decode(response.body)['states_daily'];
   }
 }

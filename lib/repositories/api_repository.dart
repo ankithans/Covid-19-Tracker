@@ -23,4 +23,16 @@ class ApiRepository {
   fetchTestData() async {
     return apiClient.fetchTestData();
   }
+
+  fetchStatesLength() async {
+    return apiClient.fetchStatesLengthData();
+  }
+
+  fetchStatesDailyData() async {
+    return apiClient.fetchStatesDailyData();
+  }
+
+  fetchStatesDailyDataLength() async {
+    return apiClient.fetchStatesDailyDataLength();
+  }
 }

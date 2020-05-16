@@ -1,5 +1,5 @@
 import 'package:covid19_tracker_application/ui/screens/dashboard.dart';
-import 'package:covid19_tracker_application/ui/screens/landing_page.dart';
+import 'package:covid19_tracker_application/ui/screens/indian_states.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,9 +13,9 @@ class _HomeScreenState extends State<HomeScreen> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    LandingPage(),
-    Text('klk'),
-    Text('ff')
+    DashBoard(),
+    IndianStates(),
+    Text('ff'),
   ];
 
   void _onItemTapped(int index) {

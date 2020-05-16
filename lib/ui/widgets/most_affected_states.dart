@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:number_display/number_display.dart';
 
 class MostAffectedStates extends StatelessWidget {
   final totalData;
@@ -8,6 +9,7 @@ class MostAffectedStates extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final display = createDisplay();
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -30,13 +32,25 @@ class MostAffectedStates extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    'Confirmed: ' +
-                        totalData['statewise'][index]['confirmed'].toString(),
-                    style: GoogleFonts.montserrat(
-                      color: Colors.red,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        'Confirmed: ',
+                        style: GoogleFonts.montserrat(
+                          color: Colors.red,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        display(int.parse(
+                                totalData['statewise'][index]['confirmed']))
+                            .toString(),
+                        style: GoogleFonts.montserrat(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),
