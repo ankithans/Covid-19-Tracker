@@ -37,7 +37,7 @@ class StatesCard extends StatelessWidget {
         color: Colors.grey[300],
         borderRadius: BorderRadius.circular(8),
       ),
-      height: 400.w,
+      height: 420.w,
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -54,7 +54,7 @@ class StatesCard extends StatelessWidget {
                     overflow: TextOverflow.clip,
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.w600,
-                      fontSize: 17,
+                      fontSize: 16,
                       // color: Colors.black87,
                     ),
                   ),
@@ -67,15 +67,15 @@ class StatesCard extends StatelessWidget {
                     Text(
                       "Confirmed: ",
                       style: GoogleFonts.montserrat(
-                        color: Color(0xFFF83F38),
+                        color: Color(0xFFF83F38), fontSize: 13,
                         // fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      "$confirmed [+$deltaConfirmed]",
+                      "$confirmed",
                       style: GoogleFonts.montserrat(
                         color: Color(0xFFF83F38),
-                        fontSize: 16,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -90,6 +90,7 @@ class StatesCard extends StatelessWidget {
                       "Active: ",
                       style: GoogleFonts.montserrat(
                         color: Color(0xFF0278F9),
+                        fontSize: 13,
                         // fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -97,7 +98,7 @@ class StatesCard extends StatelessWidget {
                       "$active",
                       style: GoogleFonts.montserrat(
                         color: Color(0xFF0278F9),
-                        fontSize: 16,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -112,14 +113,15 @@ class StatesCard extends StatelessWidget {
                       "Recovered: ",
                       style: GoogleFonts.montserrat(
                         color: Color(0xFF41A745),
+                        fontSize: 13,
                         // fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      "$recovered [+$deltaRecovered]",
+                      "$recovered",
                       style: GoogleFonts.montserrat(
                         color: Color(0xFF41A745),
-                        fontSize: 16,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -134,14 +136,15 @@ class StatesCard extends StatelessWidget {
                       "Decreased: ",
                       style: GoogleFonts.montserrat(
                         color: Color(0xFF6B747C),
+                        fontSize: 13,
                         // fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      "$decreased [+$deltaDecreased]",
+                      "$decreased",
                       style: GoogleFonts.montserrat(
                         color: Color(0xFF6B747C),
-                        fontSize: 16,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -152,15 +155,26 @@ class StatesCard extends StatelessWidget {
             SizedBox(
               width: 10.w,
             ),
-            Sparkline(
-              data: data,
-              fallbackHeight: 100.w,
-              fallbackWidth: 400.w,
-              lineColor: Colors.red,
-              pointsMode: PointsMode.last,
-              pointColor: Colors.red,
-              pointSize: 5,
-              sharpCorners: true,
+            Container(
+              // width: 500.w,
+              child: Sparkline(
+                data: data,
+                fallbackHeight: 50.w,
+                fallbackWidth: 400.w,
+                lineColor: Colors.red,
+                pointsMode: PointsMode.last,
+                pointColor: Colors.red,
+                pointSize: 5,
+                sharpCorners: true,
+                lineGradient: new LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.red[800],
+                    Colors.red[100],
+                  ],
+                ),
+              ),
             ),
           ],
         ),

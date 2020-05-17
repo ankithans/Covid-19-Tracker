@@ -40,9 +40,11 @@ class _IndianStatesState extends State<IndianStates>
           final stateDailyDataLength = state.stateDailyDataLength;
           final stateDailyData = state.stateDailyData;
 
+          // print("districtData: $districtData");
+
           List<double> _generateConfirmedData(int index) {
             List<double> result = <double>[];
-            for (int i = stateDailyDataLength.length - 170;
+            for (int i = stateDailyDataLength.length - 100;
                 i < stateDailyDataLength.length;
                 i++) {
               result.add(
@@ -54,11 +56,11 @@ class _IndianStatesState extends State<IndianStates>
             return result;
           }
 
-          print(totalData1['statewise'][1]['statecode'].toLowerCase());
-          print(stateDailyData['states_daily'][0]
-              [totalData1['statewise'][1]['statecode'].toLowerCase()]);
+          // print(totalData1['statewise'][1]['statecode'].toLowerCase());
+          // print(stateDailyData['states_daily'][0]
+          //     [totalData1['statewise'][1]['statecode'].toLowerCase()]);
           return ListView.builder(
-            itemCount: statesLength.length,
+            itemCount: statesLength.length - 1,
             itemBuilder: (context, index) {
               return Padding(
                 padding: EdgeInsets.only(
@@ -67,22 +69,22 @@ class _IndianStatesState extends State<IndianStates>
                   right: ScreenUtil().setWidth(30),
                 ),
                 child: StatesCard(
-                  stateName: totalData1['statewise'][index]['state'],
-                  confirmed: display(
-                      int.parse(totalData1['statewise'][index]['confirmed'])),
+                  stateName: totalData1['statewise'][index + 1]['state'],
+                  confirmed: display(int.parse(
+                      totalData1['statewise'][index + 1]['confirmed'])),
                   deltaConfirmed: display(int.parse(
-                      totalData1['statewise'][index]['deltaconfirmed'])),
+                      totalData1['statewise'][index + 1]['deltaconfirmed'])),
                   active: display(
-                      int.parse(totalData1['statewise'][index]['active'])),
-                  recovered: display(
-                      int.parse(totalData1['statewise'][index]['recovered'])),
+                      int.parse(totalData1['statewise'][index + 1]['active'])),
+                  recovered: display(int.parse(
+                      totalData1['statewise'][index + 1]['recovered'])),
                   deltaRecovered: display(int.parse(
-                      totalData1['statewise'][index]['deltarecovered'])),
+                      totalData1['statewise'][index + 1]['deltarecovered'])),
                   decreased: display(
-                      int.parse(totalData1['statewise'][index]['deaths'])),
-                  deltaDecreased: display(
-                      int.parse(totalData1['statewise'][index]['deltadeaths'])),
-                  data: _generateConfirmedData(index),
+                      int.parse(totalData1['statewise'][index + 1]['deaths'])),
+                  deltaDecreased: display(int.parse(
+                      totalData1['statewise'][index + 1]['deltadeaths'])),
+                  data: _generateConfirmedData(index + 1),
                 ),
               );
             },
