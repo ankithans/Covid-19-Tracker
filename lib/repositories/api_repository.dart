@@ -35,4 +35,12 @@ class ApiRepository {
   fetchStatesDailyDataLength() async {
     return apiClient.fetchStatesDailyDataLength();
   }
+
+  fetchZoneData() async {
+    return apiClient.fetchZoneData();
+  }
+
+  fetchZoneDataLength() async {
+    return apiClient.fetchZoneDataLength();
+  }
 }

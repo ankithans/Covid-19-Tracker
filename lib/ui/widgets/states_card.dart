@@ -34,7 +34,7 @@ class StatesCard extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[300],
+        color: Colors.grey[100],
         borderRadius: BorderRadius.circular(8),
       ),
       height: 420.w,

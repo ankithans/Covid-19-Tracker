@@ -2,6 +2,7 @@ import 'package:covid19_tracker_application/bloc/covid_19_bloc.dart';
 import 'package:covid19_tracker_application/ui/widgets/data_text_chart.dart';
 import 'package:covid19_tracker_application/ui/widgets/info_card.dart';
 import 'package:covid19_tracker_application/ui/widgets/most_affected_states.dart';
+import 'package:covid19_tracker_application/ui/widgets/requirements.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -107,8 +108,8 @@ class _DashBoardState extends State<DashBoard>
                   var recoveredData = _generateRecoveredData();
                   var decreasedData = _generateDecreasedData();
                   final display = createDisplay();
-                  print(totalData1['cases_time_series'][chartData1.length - 1]
-                      ['totalconfirmed']);
+                  // print(totalData1['cases_time_series'][chartData1.length - 1]
+                  //     ['totalconfirmed']);
 
                   return Center(
                     child: Padding(

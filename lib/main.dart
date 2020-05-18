@@ -1,4 +1,5 @@
 import 'package:covid19_tracker_application/bloc/covid_19_bloc.dart';
+import 'package:covid19_tracker_application/bloc/zones_bloc.dart';
 import 'package:covid19_tracker_application/repositories/repositories.dart';
 import 'package:covid19_tracker_application/simple_bloc_delegate.dart';
 import 'package:covid19_tracker_application/ui/screens/home_screen.dart';
@@ -14,7 +15,9 @@ void main() {
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider(
-          create: (context) => Covid_19Bloc(apiRepository: apiRepository))
+          create: (context) => Covid_19Bloc(apiRepository: apiRepository)),
+      BlocProvider(
+          create: (context) => ZonesBloc(apiRepository: apiRepository)),
     ],
     child: MyApp(
       apiRepository: apiRepository,
@@ -39,10 +42,15 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           home: BlocProvider(
-            create: (context) => Covid_19Bloc(
+            create: (context) => ZonesBloc(
               apiRepository: apiRepository,
             ),
-            child: HomeScreen(),
+            child: BlocProvider(
+              create: (context) => Covid_19Bloc(
+                apiRepository: apiRepository,
+              ),
+              child: HomeScreen(),
+            ),
           ),
         );
       },

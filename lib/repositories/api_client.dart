@@ -59,4 +59,16 @@ class ApiClient {
         await http.get('https://api.covid19india.org/states_daily.json');
     return json.decode(response.body)['states_daily'];
   }
+
+  fetchZoneData() async {
+    http.Response response =
+        await http.get('https://api.covid19india.org/zones.json');
+    return json.decode(response.body);
+  }
+
+  fetchZoneDataLength() async {
+    http.Response response =
+        await http.get('https://api.covid19india.org/zones.json');
+    return json.decode(response.body)['zones'];
+  }
 }
