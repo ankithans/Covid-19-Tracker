@@ -60,6 +60,7 @@ class _IndianStatesState extends State<IndianStates>
           // print(stateDailyData['states_daily'][0]
           //     [totalData1['statewise'][1]['statecode'].toLowerCase()]);
           return ListView.builder(
+            physics: BouncingScrollPhysics(),
             itemCount: statesLength.length - 1,
             itemBuilder: (context, index) {
               return Padding(

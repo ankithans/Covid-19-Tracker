@@ -2,6 +2,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:covid19_tracker_application/ui/screens/dashboard.dart';
 import 'package:covid19_tracker_application/ui/screens/indian_states.dart';
 import 'package:covid19_tracker_application/ui/screens/zones.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -76,7 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SizedBox.expand(
         child: PageView(
+          physics: BouncingScrollPhysics(),
           controller: _pageController,
+          dragStartBehavior: DragStartBehavior.start,
           onPageChanged: (index) {
             setState(() => _currentIndex = index);
           },
@@ -91,7 +94,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavyBar(
-        animationDuration: Duration(milliseconds: 300),
+        curve: Curves.easeIn,
+        animationDuration: Duration(milliseconds: 500),
+        // itemCornerRadius: 15,
+        showElevation: true,
         selectedIndex: _currentIndex,
         onItemSelected: (index) {
           setState(() => _currentIndex = index);
@@ -109,8 +115,8 @@ class _HomeScreenState extends State<HomeScreen> {
             activeColor: Colors.green,
           ),
           BottomNavyBarItem(
-            title: Text('Districts'),
-            icon: Icon(Icons.chat_bubble),
+            title: Text('District zone'),
+            icon: Icon(Icons.place),
             activeColor: Colors.blue,
           ),
           BottomNavyBarItem(

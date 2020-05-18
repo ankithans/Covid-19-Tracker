@@ -32,6 +32,7 @@ class _DashBoardState extends State<DashBoard>
         width: 1080, height: 2340, allowFontScaling: false);
     return Container(
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: <Widget>[
             SizedBox(
@@ -108,8 +109,8 @@ class _DashBoardState extends State<DashBoard>
                   var recoveredData = _generateRecoveredData();
                   var decreasedData = _generateDecreasedData();
                   final display = createDisplay();
-                  // print(totalData1['cases_time_series'][chartData1.length - 1]
-                  //     ['totalconfirmed']);
+                  print(totalData1['cases_time_series'][chartData1.length - 1]
+                      ['totalconfirmed']);
 
                   return Center(
                     child: Padding(

@@ -53,12 +53,19 @@ class ZoneCard extends StatelessWidget {
                       color: textColor,
                     ),
                   ),
-                  Text(
-                    district,
-                    style: GoogleFonts.montserrat(
-                      color: textColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        district,
+                        style: GoogleFonts.montserrat(
+                          color: textColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                    ],
                   ),
                 ],
               ),

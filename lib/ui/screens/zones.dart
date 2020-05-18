@@ -1,6 +1,7 @@
 import 'package:covid19_tracker_application/bloc/zones_bloc.dart';
 import 'package:covid19_tracker_application/ui/widgets/search_districts.dart';
 import 'package:covid19_tracker_application/ui/widgets/zone_card.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -72,8 +73,9 @@ class _ZonesState extends State<Zones> with AutomaticKeepAliveClientMixin {
             // print(zoneData);
 
             return ListView.builder(
+              physics: BouncingScrollPhysics(),
               itemCount: zoneDataLength.length,
-              shrinkWrap: true,
+              // shrinkWrap: true,
               // physics: AlwaysScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return ZoneCard(
