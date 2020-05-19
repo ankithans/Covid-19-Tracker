@@ -4,6 +4,7 @@ import 'package:covid19_tracker_application/repositories/repositories.dart';
 import 'package:covid19_tracker_application/simple_bloc_delegate.dart';
 import 'package:covid19_tracker_application/ui/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
@@ -34,6 +35,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return BlocBuilder<Covid_19Bloc, Covid_19State>(
       builder: (BuildContext context, Covid_19State state) {
         return MaterialApp(

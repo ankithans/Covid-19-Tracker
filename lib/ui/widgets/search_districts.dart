@@ -43,11 +43,11 @@ class SearchDistricts extends SearchDelegate {
             .toList();
 
     zoneColor(int index) {
-      if (zoneData['zones'][index]['zone'] == 'Green') {
+      if (suggestionList[index]['zone'] == 'Green') {
         return Color(0xFFE1F2E8);
-      } else if (zoneData['zones'][index]['zone'] == 'Red') {
+      } else if (suggestionList[index]['zone'] == 'Red') {
         return Color(0xFFFDE1E1);
-      } else if (zoneData['zones'][index]['zone'] == 'Orange') {
+      } else if (suggestionList[index]['zone'] == 'Orange') {
         return Colors.orange.withOpacity(.2);
       }
     }
