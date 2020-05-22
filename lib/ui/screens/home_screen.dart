@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: PageView(
           physics: BouncingScrollPhysics(),
           controller: _pageController,
-          dragStartBehavior: DragStartBehavior.start,
+          dragStartBehavior: DragStartBehavior.down,
           onPageChanged: (index) {
             setState(() => _currentIndex = index);
           },

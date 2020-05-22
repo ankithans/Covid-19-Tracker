@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_stetho/flutter_stetho.dart';
+import 'package:theme_provider/theme_provider.dart';
 
 void main() {
   Stetho.initialize();
@@ -45,22 +46,21 @@ class MyApp extends StatelessWidget {
     ]);
     return BlocBuilder<Covid_19Bloc, Covid_19State>(
       builder: (BuildContext context, Covid_19State state) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: BlocProvider(
-            create: (context) => HomeBloc(),
-            child: BlocProvider(
-              create: (context) => ZonesBloc(
-                apiRepository: apiRepository,
-              ),
+        return ThemeProvider(
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: BlocProvider(
+              create: (context) => HomeBloc(),
               child: BlocProvider(
-                create: (context) => Covid_19Bloc(
+                create: (context) => ZonesBloc(
                   apiRepository: apiRepository,
                 ),
-                child: HomeScreen(),
+                child: BlocProvider(
+                  create: (context) => Covid_19Bloc(
+                    apiRepository: apiRepository,
+                  ),
+                  child: HomeScreen(),
+                ),
               ),
             ),
           ),

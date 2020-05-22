@@ -57,22 +57,22 @@ class _IndianStatesState extends State<IndianStates>
             ],
           ),
           elevation: 0,
-          actions: <Widget>[
-            Column(
-              children: <Widget>[
-                SizedBox(
-                  height: 8,
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.brightness_7,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {},
-                ),
-              ],
-            ),
-          ],
+          // actions: <Widget>[
+          //   Column(
+          //     children: <Widget>[
+          //       SizedBox(
+          //         height: 8,
+          //       ),
+          //       IconButton(
+          //         icon: Icon(
+          //           Icons.brightness_7,
+          //           color: Colors.black,
+          //         ),
+          //         onPressed: () {},
+          //       ),
+          //     ],
+          //   ),
+          // ],
         ),
         body: BlocBuilder<Covid_19Bloc, Covid_19State>(
           builder: (context, state) {

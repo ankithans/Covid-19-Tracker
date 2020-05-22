@@ -32,6 +32,7 @@ class _DashBoardState extends State<DashBoard>
     ScreenUtil.init(context,
         width: 1080, height: 2340, allowFontScaling: false);
     return Scaffold(
+      // backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Column(
@@ -60,22 +61,22 @@ class _DashBoardState extends State<DashBoard>
           ],
         ),
         elevation: 0,
-        actions: <Widget>[
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: 8,
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.brightness_7,
-                  color: Colors.black,
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ],
+        // actions: <Widget>[
+        //   Column(
+        //     children: <Widget>[
+        //       SizedBox(
+        //         height: 8,
+        //       ),
+        //       IconButton(
+        //         icon: Icon(
+        //           Icons.brightness_7,
+        //           color: Colors.black,
+        //         ),
+        //         onPressed: () {},
+        //       ),
+        //     ],
+        //   ),
+        // ],
       ),
       body: BlocBuilder<Covid_19Bloc, Covid_19State>(
         builder: (BuildContext context, Covid_19State state) {

@@ -39,10 +39,17 @@ dependencies:
   url_launcher: ^5.4.10
   flutter_stetho: ^0.5.2
   line_awesome_icons: ^1.0.4+2
+  theme_provider: ^0.3.3
+  flutter_launcher_icons: ^0.7.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/safe.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -81,7 +88,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
-
-
-

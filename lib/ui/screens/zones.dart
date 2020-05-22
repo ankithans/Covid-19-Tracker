@@ -57,22 +57,22 @@ class _ZonesState extends State<Zones> with AutomaticKeepAliveClientMixin {
           ],
         ),
         elevation: 0,
-        actions: <Widget>[
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: 8,
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.brightness_7,
-                  color: Colors.black,
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ],
+        // actions: <Widget>[
+        //   Column(
+        //     children: <Widget>[
+        //       SizedBox(
+        //         height: 8,
+        //       ),
+        //       IconButton(
+        //         icon: Icon(
+        //           Icons.brightness_7,
+        //           color: Colors.black,
+        //         ),
+        //         onPressed: () {},
+        //       ),
+        //     ],
+        //   ),
+        // ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
