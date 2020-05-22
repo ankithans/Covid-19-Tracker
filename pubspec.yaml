@@ -33,6 +33,11 @@ dependencies:
   bottom_navy_bar:
   scroll_snap_list:
   flutter_spinkit: ^4.1.2+1
+  json_serializable: ^3.3.0
+  cached_network_image: ^2.2.0+1
+  intl: ^0.16.1
+  url_launcher: ^5.4.10
+  flutter_stetho: ^0.5.2
 
 dev_dependencies:
   flutter_test:

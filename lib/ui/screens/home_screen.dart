@@ -1,6 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:covid19_tracker_application/ui/screens/dashboard.dart';
 import 'package:covid19_tracker_application/ui/screens/indian_states.dart';
+import 'package:covid19_tracker_application/ui/screens/news_page.dart';
 import 'package:covid19_tracker_application/ui/screens/zones.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -30,51 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Column(
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Text(
-                  'Covid-19',
-                  style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  'Tracker',
-                  style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-        elevation: 0,
-        actions: <Widget>[
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height: 8,
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.brightness_7,
-                  color: Colors.black,
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ],
-      ),
       body: SizedBox.expand(
         child: PageView(
           physics: BouncingScrollPhysics(),
@@ -87,9 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
             DashBoard(),
             IndianStates(),
             Zones(),
-            Container(
-              color: Colors.blue,
-            ),
+            NewsScreen(),
           ],
         ),
       ),
@@ -120,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
             activeColor: Color(0xFFA05AB3),
           ),
           BottomNavyBarItem(
-            title: Text('Item One'),
+            title: Text('Health News'),
             icon: Icon(Icons.settings),
             activeColor: Color(0xFFFFB339),
           ),

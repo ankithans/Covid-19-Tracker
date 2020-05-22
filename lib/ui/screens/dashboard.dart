@@ -32,6 +32,51 @@ class _DashBoardState extends State<DashBoard>
     ScreenUtil.init(context,
         width: 1080, height: 2340, allowFontScaling: false);
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Text(
+                  'Covid-19',
+                  style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  'Tracker',
+                  style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        elevation: 0,
+        actions: <Widget>[
+          Column(
+            children: <Widget>[
+              SizedBox(
+                height: 8,
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.brightness_7,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ],
+      ),
       body: BlocBuilder<Covid_19Bloc, Covid_19State>(
         builder: (BuildContext context, Covid_19State state) {
           // print(state);
@@ -247,7 +292,7 @@ class _DashBoardState extends State<DashBoard>
                                 backgroundColor: Color(0xFFFDE1E1),
                                 title: 'Confirmed Per Million',
                                 description:
-                                    '${((double.parse(statewise.confirmed) / 135260000) * 1000000).toStringAsFixed(2)} out of every 1 million people in India have tested positive for the virus.',
+                                    '${((double.parse(statewise.confirmed) / 135260000) * 1000000).toStringAsFixed(0)} out of every 1 million people in India have tested positive for the virus.',
                                 number:
                                     '${((double.parse(statewise.confirmed) / 135260000) * 1000000).toStringAsFixed(2)}',
                                 numberColor: Color(0xFFF83F38),

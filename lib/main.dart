@@ -1,4 +1,5 @@
 import 'package:covid19_tracker_application/bloc/covid_19_bloc.dart';
+import 'package:covid19_tracker_application/bloc/home_bloc.dart';
 import 'package:covid19_tracker_application/bloc/zones_bloc.dart';
 import 'package:covid19_tracker_application/repositories/repositories.dart';
 import 'package:covid19_tracker_application/simple_bloc_delegate.dart';
@@ -6,8 +7,10 @@ import 'package:covid19_tracker_application/ui/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_stetho/flutter_stetho.dart';
 
 void main() {
+  Stetho.initialize();
   final ApiRepository apiRepository = ApiRepository(
     apiClient: ApiClient(),
   );
@@ -19,6 +22,7 @@ void main() {
           create: (context) => Covid_19Bloc(apiRepository: apiRepository)),
       BlocProvider(
           create: (context) => ZonesBloc(apiRepository: apiRepository)),
+      BlocProvider(create: (context) => HomeBloc()),
     ],
     child: MyApp(
       apiRepository: apiRepository,
@@ -47,14 +51,17 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           home: BlocProvider(
-            create: (context) => ZonesBloc(
-              apiRepository: apiRepository,
-            ),
+            create: (context) => HomeBloc(),
             child: BlocProvider(
-              create: (context) => Covid_19Bloc(
+              create: (context) => ZonesBloc(
                 apiRepository: apiRepository,
               ),
-              child: HomeScreen(),
+              child: BlocProvider(
+                create: (context) => Covid_19Bloc(
+                  apiRepository: apiRepository,
+                ),
+                child: HomeScreen(),
+              ),
             ),
           ),
         );

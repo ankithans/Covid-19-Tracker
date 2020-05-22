@@ -2,9 +2,9 @@ import 'package:covid19_tracker_application/bloc/zones_bloc.dart';
 import 'package:covid19_tracker_application/ui/widgets/loading.dart';
 import 'package:covid19_tracker_application/ui/widgets/search_districts.dart';
 import 'package:covid19_tracker_application/ui/widgets/zone_card.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Zones extends StatefulWidget {
   @override
@@ -29,6 +29,51 @@ class _ZonesState extends State<Zones> with AutomaticKeepAliveClientMixin {
     super.build(context);
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Text(
+                  'District',
+                  style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  'Zones',
+                  style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        elevation: 0,
+        actions: <Widget>[
+          Column(
+            children: <Widget>[
+              SizedBox(
+                height: 8,
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.brightness_7,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.search),
         onPressed: () => zoneLoad
