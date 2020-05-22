@@ -86,7 +86,7 @@ class NewsScreen extends StatelessWidget {
       child: Text(
         'Top stories at the moment',
         style: Theme.of(context).textTheme.caption.merge(
-              TextStyle(
+              GoogleFonts.montserrat(
                 color: Color(0xFF325384).withOpacity(0.5),
               ),
             ),
@@ -136,7 +136,7 @@ class WidgetTitle extends StatelessWidget {
             TextSpan(
               text: strToday,
               style: Theme.of(context).textTheme.caption.merge(
-                    TextStyle(
+                    GoogleFonts.montserrat(
                       color: Color(0xFF325384).withOpacity(0.8),
                       fontSize: 10.0,
                     ),
@@ -274,7 +274,7 @@ class _WidgetLatestNewsState extends State<WidgetLatestNews> {
                       ),
                       child: Text(
                         itemArticle.title,
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           color: Colors.white,
                         ),
                         overflow: TextOverflow.ellipsis,
@@ -297,7 +297,7 @@ class _WidgetLatestNewsState extends State<WidgetLatestNews> {
                           SizedBox(width: 4.0),
                           Text(
                             '${itemArticle.source.name}',
-                            style: TextStyle(
+                            style: GoogleFonts.montserrat(
                               color: Colors.white.withOpacity(0.8),
                               fontSize: 11.0,
                             ),
@@ -332,8 +332,8 @@ class _WidgetLatestNewsState extends State<WidgetLatestNews> {
                               itemArticle.title,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 3,
-                              style: TextStyle(
-                                fontSize: 16.0,
+                              style: GoogleFonts.montserrat(
+                                fontSize: 13.0,
                                 color: Color(0xFF325384),
                                 fontWeight: FontWeight.w400,
                               ),

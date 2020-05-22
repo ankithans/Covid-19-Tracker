@@ -33,7 +33,7 @@ class DataTextChart extends StatelessWidget {
         width: 1080, height: 2340, allowFontScaling: false);
     return Container(
       child: Padding(
-        padding: EdgeInsets.all(ScreenUtil().setWidth(150.w)),
+        padding: EdgeInsets.all(ScreenUtil().setWidth(140.w)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[

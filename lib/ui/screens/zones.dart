@@ -39,7 +39,7 @@ class _ZonesState extends State<Zones> with AutomaticKeepAliveClientMixin {
                   'District',
                   style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Color(0xFF325384),
                   ),
                 ),
                 SizedBox(

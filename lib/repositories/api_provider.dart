@@ -4,7 +4,7 @@ import 'package:covid19_tracker_application/models/topheadlinesnews/response_top
 class ApiProvider {
   final Dio _dio = Dio();
   final String _baseUrl =
-      'https://newsapi.org/v2/top-headlines?language=hi&country=in&category=health&apiKey=24cf1985087946dbad6f46afc191cece';
+      'https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=24cf1985087946dbad6f46afc191cece';
 
   void printOutError(error, StackTrace stacktrace) {
     print('Exception occured: $error with stacktrace: $stacktrace');

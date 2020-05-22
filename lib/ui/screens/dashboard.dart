@@ -42,7 +42,7 @@ class _DashBoardState extends State<DashBoard>
                   'Covid-19',
                   style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Color(0xFF325384),
                   ),
                 ),
                 SizedBox(
@@ -185,7 +185,7 @@ class _DashBoardState extends State<DashBoard>
                                   ),
                                   Icon(
                                     Icons.notifications,
-                                    size: 50.w,
+                                    size: 45.w,
                                     color: Color(0xFF6B747C),
                                   ),
                                 ],
@@ -224,9 +224,9 @@ class _DashBoardState extends State<DashBoard>
                                   ),
                                 ],
                               ),
-                              SizedBox(
-                                height: 10.w,
-                              ),
+                              // SizedBox(
+                              //   height: 10.w,
+                              // ),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,

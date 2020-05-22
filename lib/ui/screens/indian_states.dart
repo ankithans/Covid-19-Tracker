@@ -39,7 +39,7 @@ class _IndianStatesState extends State<IndianStates>
                     'Indian',
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Color(0xFF325384),
                     ),
                   ),
                   SizedBox(

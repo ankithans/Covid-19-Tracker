@@ -78,12 +78,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavyBarItem(
             title: Text('  News', style: GoogleFonts.montserrat()),
-            icon: Icon(LineAwesomeIcons.info_circle),
+            icon: Icon(Icons.explore),
             activeColor: Color(0xFFFFB339),
           ),
           BottomNavyBarItem(
             title: Text('Precautions', style: GoogleFonts.montserrat()),
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.error_outline),
             activeColor: Color(0xFF299489),
           ),
         ],

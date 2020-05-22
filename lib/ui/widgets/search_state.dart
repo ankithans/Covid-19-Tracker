@@ -49,7 +49,7 @@ class SearchStates extends SearchDelegate {
         ? statesLength
         : statesLength
             .where((element) =>
-                element['state'].toString().toLowerCase().startsWith(query))
+                element['statecode'].toString().toLowerCase().startsWith(query))
             .toList();
 
     List<double> _generateConfirmedData(int index) {

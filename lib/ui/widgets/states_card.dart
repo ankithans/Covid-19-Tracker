@@ -55,7 +55,7 @@ class StatesCard extends StatelessWidget {
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
-                      // color: Colors.black87,
+                      color: Color(0xFF325399),
                     ),
                   ),
                 ),
