@@ -63,6 +63,7 @@ class SearchDistricts extends SearchDelegate {
     }
 
     return ListView.builder(
+        physics: BouncingScrollPhysics(),
         itemCount: suggestionList.length,
         itemBuilder: (context, index) {
           return ZoneCard(

@@ -112,17 +112,17 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavyBarItem(
             title: Text('Indian states'),
             icon: Icon(Icons.flag),
-            activeColor: Colors.green,
+            activeColor: Color(0xFF299489),
           ),
           BottomNavyBarItem(
             title: Text('District zone'),
             icon: Icon(Icons.place),
-            activeColor: Colors.blue,
+            activeColor: Color(0xFFA05AB3),
           ),
           BottomNavyBarItem(
             title: Text('Item One'),
             icon: Icon(Icons.settings),
-            activeColor: Colors.red,
+            activeColor: Color(0xFFFFB339),
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:covid19_tracker_application/bloc/covid_19_bloc.dart';
+import 'package:covid19_tracker_application/ui/widgets/loading.dart';
 import 'package:covid19_tracker_application/ui/widgets/states_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +31,7 @@ class _IndianStatesState extends State<IndianStates>
       builder: (context, state) {
         if (state is CaseLoading) {
           return Center(
-            child: CircularProgressIndicator(),
+            child: Loading(),
           );
         }
         if (state is CaseLoaded) {
@@ -44,7 +45,7 @@ class _IndianStatesState extends State<IndianStates>
 
           List<double> _generateConfirmedData(int index) {
             List<double> result = <double>[];
-            for (int i = stateDailyDataLength.length - 100;
+            for (int i = stateDailyDataLength.length - 120;
                 i < stateDailyDataLength.length;
                 i++) {
               result.add(

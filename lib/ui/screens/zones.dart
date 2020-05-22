@@ -1,4 +1,5 @@
 import 'package:covid19_tracker_application/bloc/zones_bloc.dart';
+import 'package:covid19_tracker_application/ui/widgets/loading.dart';
 import 'package:covid19_tracker_application/ui/widgets/search_districts.dart';
 import 'package:covid19_tracker_application/ui/widgets/zone_card.dart';
 import 'package:flutter/gestures.dart';
@@ -40,7 +41,7 @@ class _ZonesState extends State<Zones> with AutomaticKeepAliveClientMixin {
         builder: (BuildContext context, ZonesState state) {
           if (state is ZoneLoading) {
             return Center(
-              child: CircularProgressIndicator(),
+              child: Loading(),
             );
           }
           if (state is ZoneLoaded) {

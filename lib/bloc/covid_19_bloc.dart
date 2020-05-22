@@ -98,7 +98,7 @@ class Covid_19Bloc extends Bloc<Covid_19Event, Covid_19State> {
       final stateDailyData = await apiRepository.fetchStatesDailyData();
       final List stateDailyDataLength =
           await apiRepository.fetchStatesDailyDataLength();
-      print(allData);
+      // print(allData);
       yield CaseLoaded(
         statewise: allData.statewise[0],
         casesTimeSery: allData.casesTimeSeries[0],

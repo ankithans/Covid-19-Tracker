@@ -162,15 +162,14 @@ class StatesCard extends StatelessWidget {
                 fallbackHeight: 50.w,
                 fallbackWidth: 400.w,
                 lineColor: Colors.red,
-                pointsMode: PointsMode.last,
-                pointColor: Colors.red,
                 pointSize: 5,
+                lineWidth: 3,
                 sharpCorners: true,
-                lineGradient: new LinearGradient(
+                lineGradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.red[800],
+                    Colors.red[500],
                     Colors.red[100],
                   ],
                 ),
