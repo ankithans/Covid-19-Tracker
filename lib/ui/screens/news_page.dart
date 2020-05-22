@@ -6,6 +6,7 @@ import 'package:covid19_tracker_application/ui/widgets/loading.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,6 +19,31 @@ class NewsScreen extends StatelessWidget {
     var mediaQuery = MediaQuery.of(context);
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Column(
+          children: <Widget>[
+            WidgetTitle(strToday),
+          ],
+        ),
+        elevation: 0,
+        actions: <Widget>[
+          Column(
+            children: <Widget>[
+              SizedBox(
+                height: 8,
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.brightness_7,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ],
+      ),
       key: scaffoldState,
       body: BlocProvider<HomeBloc>(
         create: (context) => HomeBloc(),
@@ -32,24 +58,17 @@ class NewsScreen extends StatelessWidget {
                 ),
               ),
               padding: EdgeInsets.only(
-                top: mediaQuery.padding.top + 10.0,
+                top: 10,
                 bottom: 0.0,
               ),
               child: Column(
                 children: <Widget>[
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      WidgetTitle(strToday),
-                    ],
-                  ),
                   /*SizedBox(height: 8.0),
                   buildWidgetSearch(),*/
-                  SizedBox(height: 8.0),
                 ],
               ),
             ),
-            SizedBox(height: 10.0),
+
             // _buildWidgetLabelLatestNews(context),
             _buildWidgetSubtitleLatestNews(context),
             Expanded(
@@ -101,14 +120,15 @@ class WidgetTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 0.0),
       child: RichText(
         text: TextSpan(
           children: [
             TextSpan(
               text: 'Health News\n',
               style: Theme.of(context).textTheme.title.merge(
-                    TextStyle(
+                    GoogleFonts.montserrat(
+                      fontWeight: FontWeight.bold,
                       color: Color(0xFF325384),
                     ),
                   ),
@@ -351,7 +371,7 @@ class _WidgetLatestNewsState extends State<WidgetLatestNews> {
                           fit: BoxFit.cover,
                         ),*/
                         child: CachedNetworkImage(
-                          imageUrl: itemArticle.urlToImage,
+                          imageUrl: itemArticle.urlToImage ?? '',
                           imageBuilder: (context, imageProvider) {
                             return Container(
                               width: 72.0,

@@ -2,10 +2,12 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:covid19_tracker_application/ui/screens/dashboard.dart';
 import 'package:covid19_tracker_application/ui/screens/indian_states.dart';
 import 'package:covid19_tracker_application/ui/screens/news_page.dart';
+import 'package:covid19_tracker_application/ui/screens/precautions.dart';
 import 'package:covid19_tracker_application/ui/screens/zones.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -44,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
             IndianStates(),
             Zones(),
             NewsScreen(),
+            Precautions(),
           ],
         ),
       ),
@@ -59,24 +62,29 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
-            title: Text('Dashboard'),
-            icon: Icon(Icons.home),
+            title: Text('Dashboard', style: GoogleFonts.montserrat()),
+            icon: Icon(Icons.dashboard),
             activeColor: Colors.blueGrey,
           ),
           BottomNavyBarItem(
-            title: Text('Indian states'),
+            title: Text('  States', style: GoogleFonts.montserrat()),
             icon: Icon(Icons.flag),
-            activeColor: Color(0xFF299489),
+            activeColor: Colors.indigo,
           ),
           BottomNavyBarItem(
-            title: Text('District zone'),
-            icon: Icon(Icons.place),
+            title: Text('  Zones', style: GoogleFonts.montserrat()),
+            icon: Icon(Icons.my_location),
             activeColor: Color(0xFFA05AB3),
           ),
           BottomNavyBarItem(
-            title: Text('Health News'),
-            icon: Icon(Icons.settings),
+            title: Text('  News', style: GoogleFonts.montserrat()),
+            icon: Icon(LineAwesomeIcons.info_circle),
             activeColor: Color(0xFFFFB339),
+          ),
+          BottomNavyBarItem(
+            title: Text('Precautions', style: GoogleFonts.montserrat()),
+            icon: Icon(Icons.settings),
+            activeColor: Color(0xFF299489),
           ),
         ],
       ),

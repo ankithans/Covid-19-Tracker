@@ -38,6 +38,7 @@ dependencies:
   intl: ^0.16.1
   url_launcher: ^5.4.10
   flutter_stetho: ^0.5.2
+  line_awesome_icons: ^1.0.4+2
 
 dev_dependencies:
   flutter_test:
