@@ -44,6 +44,8 @@ dependencies:
   introduction_screen: ^1.0.8
   flutter_svg: ^0.17.4
   getflutter: ^1.0.11
+  connectivity: ^0.4.8+6
+  provider: ^4.1.2
 
 dev_dependencies:
   flutter_test:

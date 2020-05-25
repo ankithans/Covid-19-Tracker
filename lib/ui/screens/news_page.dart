@@ -2,13 +2,16 @@ import 'dart:io';
 import 'package:covid19_tracker_application/models/topheadlinesnews/response_top_headlinews_news.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:covid19_tracker_application/bloc/home_bloc.dart';
+import 'package:covid19_tracker_application/repositories/enums.dart';
 import 'package:covid19_tracker_application/ui/widgets/loading.dart';
+import 'package:covid19_tracker_application/ui/widgets/noNetwork.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final GlobalKey<ScaffoldState> scaffoldState = GlobalKey<ScaffoldState>();
@@ -18,6 +21,7 @@ class NewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var strToday = getStrToday();
     var mediaQuery = MediaQuery.of(context);
+    var connectionStatus = Provider.of<ConnectivityStatus>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -33,38 +37,40 @@ class NewsScreen extends StatelessWidget {
         ],
       ),
       key: scaffoldState,
-      body: BlocProvider<HomeBloc>(
-        create: (context) => HomeBloc(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                color: Color(0xFFF1F5F9),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                ),
-              ),
-              padding: EdgeInsets.only(
-                top: 10,
-                bottom: 0.0,
-              ),
+      body: connectionStatus == ConnectivityStatus.offline
+          ? NoNetwork()
+          : BlocProvider<HomeBloc>(
+              create: (context) => HomeBloc(),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  /*SizedBox(height: 8.0),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF1F5F9),
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    padding: EdgeInsets.only(
+                      top: 10,
+                      bottom: 0.0,
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        /*SizedBox(height: 8.0),
                   buildWidgetSearch(),*/
+                      ],
+                    ),
+                  ),
+
+                  // _buildWidgetLabelLatestNews(context),
+                  _buildWidgetSubtitleLatestNews(context),
+                  Expanded(
+                    child: WidgetLatestNews(),
+                  ),
                 ],
               ),
             ),
-
-            // _buildWidgetLabelLatestNews(context),
-            _buildWidgetSubtitleLatestNews(context),
-            Expanded(
-              child: WidgetLatestNews(),
-            ),
-          ],
-        ),
-      ),
     );
   }
 
