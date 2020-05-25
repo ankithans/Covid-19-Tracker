@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+
 # Covid-19 Tracker application:
 The idea behind this application is to displays the statistics of Coronavirus COVID-19 in the :india:India and the data are being collected from [https://api.covid19india.org/](https://api.covid19india.org/) and it updates the cases constantly on this app in the India. 
 
