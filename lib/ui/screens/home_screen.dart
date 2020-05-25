@@ -1,13 +1,12 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:covid19_tracker_application/ui/screens/dashboard.dart';
+import 'package:covid19_tracker_application/ui/screens/details.dart';
 import 'package:covid19_tracker_application/ui/screens/indian_states.dart';
 import 'package:covid19_tracker_application/ui/screens/news_page.dart';
-import 'package:covid19_tracker_application/ui/screens/precautions.dart';
 import 'package:covid19_tracker_application/ui/screens/zones.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -46,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
             IndianStates(),
             Zones(),
             NewsScreen(),
-            Precautions(),
+            Details(),
           ],
         ),
       ),
@@ -67,23 +66,23 @@ class _HomeScreenState extends State<HomeScreen> {
             activeColor: Colors.blueGrey,
           ),
           BottomNavyBarItem(
-            title: Text('  States', style: GoogleFonts.montserrat()),
+            title: Text(' States', style: GoogleFonts.montserrat()),
             icon: Icon(Icons.flag),
             activeColor: Colors.indigo,
           ),
           BottomNavyBarItem(
-            title: Text('  Zones', style: GoogleFonts.montserrat()),
+            title: Text(' Zones', style: GoogleFonts.montserrat()),
             icon: Icon(Icons.my_location),
             activeColor: Color(0xFFA05AB3),
           ),
           BottomNavyBarItem(
-            title: Text('  News', style: GoogleFonts.montserrat()),
+            title: Text(' News', style: GoogleFonts.montserrat()),
             icon: Icon(Icons.explore),
             activeColor: Color(0xFFFFB339),
           ),
           BottomNavyBarItem(
-            title: Text('Precautions', style: GoogleFonts.montserrat()),
-            icon: Icon(Icons.error_outline),
+            title: Text(' Facts', style: GoogleFonts.montserrat()),
+            icon: Icon(Icons.lightbulb_outline),
             activeColor: Color(0xFF299489),
           ),
         ],

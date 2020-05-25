@@ -6,6 +6,7 @@ import 'package:covid19_tracker_application/ui/widgets/loading.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -27,22 +28,9 @@ class NewsScreen extends StatelessWidget {
           ],
         ),
         elevation: 0,
-        // actions: <Widget>[
-        //   Column(
-        //     children: <Widget>[
-        //       SizedBox(
-        //         height: 8,
-        //       ),
-        //       IconButton(
-        //         icon: Icon(
-        //           Icons.brightness_7,
-        //           color: Colors.black,
-        //         ),
-        //         onPressed: () {},
-        //       ),
-        //     ],
-        //   ),
-        // ],
+        actions: <Widget>[
+          SvgPicture.asset('assets/facts/undraw-learn-news-press.svg'),
+        ],
       ),
       key: scaffoldState,
       body: BlocProvider<HomeBloc>(

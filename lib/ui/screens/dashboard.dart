@@ -7,6 +7,7 @@ import 'package:covid19_tracker_application/ui/widgets/requirements.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:number_display/number_display.dart';
 
@@ -61,22 +62,6 @@ class _DashBoardState extends State<DashBoard>
           ],
         ),
         elevation: 0,
-        // actions: <Widget>[
-        //   Column(
-        //     children: <Widget>[
-        //       SizedBox(
-        //         height: 8,
-        //       ),
-        //       IconButton(
-        //         icon: Icon(
-        //           Icons.brightness_7,
-        //           color: Colors.black,
-        //         ),
-        //         onPressed: () {},
-        //       ),
-        //     ],
-        //   ),
-        // ],
       ),
       body: BlocBuilder<Covid_19Bloc, Covid_19State>(
         builder: (BuildContext context, Covid_19State state) {
@@ -376,6 +361,9 @@ class _DashBoardState extends State<DashBoard>
                           ),
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                   ],
                 ),

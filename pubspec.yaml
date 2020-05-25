@@ -41,6 +41,9 @@ dependencies:
   line_awesome_icons: ^1.0.4+2
   theme_provider: ^0.3.3
   flutter_launcher_icons: ^0.7.5
+  introduction_screen: ^1.0.8
+  flutter_svg: ^0.17.4
+  getflutter: ^1.0.11
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +67,9 @@ flutter:
   assets:
    - assets/images/
    - assets/pec/
+   - assets/facts/
+  #  - assets/facts/travel_advice/
+   - assets/svg/
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,3 +1,4 @@
+import 'package:covid19_tracker_application/ui/widgets/learn.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -126,78 +127,46 @@ class _PrecautionsState extends State<Precautions> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        title: Row(
-          children: <Widget>[
-            Text(
-              'Covid-19 ',
-              // textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(
-                color: Colors.blue,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+    return Container(
+      height: 450,
+      color: Colors.white,
+      child: GridView.builder(
+        physics: BouncingScrollPhysics(),
+        itemCount: 5,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: .64,
+          crossAxisCount: 2,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0,
+        ),
+        itemBuilder: (context, index) {
+          return Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.grey[50],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(
+                    height: 10,
+                  ),
+                  images[index],
+                  SizedBox(
+                    height: 10,
+                  ),
+                  title[index],
+                  SizedBox(
+                    height: 10,
+                  ),
+                  subtitle[index],
+                ],
               ),
             ),
-            Text(
-              'online scams',
-              // textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(
-                color: Color(0xFF325384),
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
-      body: Padding(
-        padding: EdgeInsets.only(
-          top: 0,
-          left: 15.0,
-          right: 15.0,
-        ),
-        child: GridView.builder(
-          physics: BouncingScrollPhysics(),
-          itemCount: 5,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: .64,
-            crossAxisCount: 2,
-            crossAxisSpacing: 10.0,
-            mainAxisSpacing: 10.0,
-          ),
-          itemBuilder: (context, index) {
-            return Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.grey[50],
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 10,
-                    ),
-                    images[index],
-                    SizedBox(
-                      height: 10,
-                    ),
-                    title[index],
-                    SizedBox(
-                      height: 10,
-                    ),
-                    subtitle[index],
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
+          );
+        },
       ),
     );
   }
