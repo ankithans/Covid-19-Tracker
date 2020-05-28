@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "910154413500",
+    "firebase_url": "https://covid-19-tracker-flutter.firebaseio.com",
+    "project_id": "covid-19-tracker-flutter",
+    "storage_bucket": "covid-19-tracker-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910154413500:android:1987096edc1e4b70e0a7b9",
+        "android_client_info": {
+          "package_name": "com.ankit.covid19Tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910154413500-4tr4b03d5l00t0osu7hk45vuihn95d5a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5lUrBGuPWI3riluTFtiJoq0Gx1HgDzPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910154413500-4tr4b03d5l00t0osu7hk45vuihn95d5a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
