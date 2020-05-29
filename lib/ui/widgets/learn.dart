@@ -99,14 +99,14 @@ class _LearnState extends State<Learn> {
             title:
                 "Eating garlic does not prevent people from getting COVID-19.",
             body: "",
-            image: _buildImage('streamline-gtf-pneumonia-vaccine'),
+            image: _buildImage('streamline-gtf-garlic-2'),
             decoration: pageDecoration,
           ),
           PageViewModel(
             title:
                 "Rinsing the nose with saline does not prevent people from getting COVID-19.",
             body: "",
-            image: _buildImage('streamline-gtf-garlic-2'),
+            image: _buildImage('streamline-gtf-pneumonia-vaccine'),
             decoration: pageDecoration,
           ),
           PageViewModel(
