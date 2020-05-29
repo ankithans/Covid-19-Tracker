@@ -47,7 +47,7 @@ class StatesCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  //height: 60.w, ///it was causing name of state to overflow if they are long as 2 lines
+                  height: 60.w,
                   width: 480.w,
                   child: Text(
                     stateName,
