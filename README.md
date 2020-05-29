@@ -5,6 +5,10 @@ The idea behind this application is to displays the statistics of Coronavirus CO
 
 <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/COVID.PNG" > 
 
+## Graphic By: 
+
+- [samriddho](https://github.com/Samriddho)
+
 ## Maintainer:
 - [ankithans](https://github.com/ankithans)
 
