@@ -19,7 +19,7 @@ The idea behind this application is to displays the statistics of Coronavirus CO
 
 <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/Screenshot_2020-05-25-18-12-41-07_b6e8ff74849ba12355204d01e7b879ba.jpg" width="250">   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/Screenshot_2020-05-25-18-12-48-45_b6e8ff74849ba12355204d01e7b879ba.jpg" width="250" style="float:right"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/Screenshot_2020-05-25-18-12-55-73_b6e8ff74849ba12355204d01e7b879ba.jpg" width="250">
 
-  <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/Screenshot_2020-05-25-18-13-05-72_b6e8ff74849ba12355204d01e7b879ba.jpg" width="250">   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/Screenshot_2020-05-25-18-50-42-98_b6e8ff74849ba12355204d01e7b879ba.jpg" width="250" style="float:right"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/Screenshot_2020-05-25-18-13-24-45_b6e8ff74849ba12355204d01e7b879ba.jpg" width="250">
+ 
 
 
 ## Salient Features: 
@@ -43,6 +43,6 @@ The idea behind this application is to displays the statistics of Coronavirus CO
 
 #### if you like what you see, then please don't forget to star the repo...
 
-<img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/header.png" > 
+
 
 
