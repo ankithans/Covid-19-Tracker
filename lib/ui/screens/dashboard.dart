@@ -14,6 +14,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:number_display/number_display.dart';
 import 'package:provider/provider.dart';
 
+import 'details.dart';
+
 class DashBoard extends StatefulWidget {
   @override
   _DashBoardState createState() => _DashBoardState();
@@ -67,6 +69,20 @@ class _DashBoardState extends State<DashBoard>
           ],
         ),
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.new_releases,
+              color: Color(0xFF299489),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Details()),
+              );
+            },
+          )
+        ],
       ),
       body: connectionStatus == ConnectivityStatus.offline
           ? NoNetwork()
