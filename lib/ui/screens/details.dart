@@ -6,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import 'home_screen.dart';
+
 class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,10 @@ class Details extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Color(0xFF325384),),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
           },
         ),
         brightness: Brightness.light,
