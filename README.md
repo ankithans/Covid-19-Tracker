@@ -11,10 +11,9 @@ The idea behind this application is to displays the statistics of Coronavirus CO
 
 ## Samples:
 
-<img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/Screenshot_2020-05-25-18-12-41-07_b6e8ff74849ba12355204d01e7b879ba.jpg" width="250">   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/Screenshot_2020-05-25-18-12-48-45_b6e8ff74849ba12355204d01e7b879ba.jpg" width="250" style="float:right"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/Screenshot_2020-05-25-18-12-55-73_b6e8ff74849ba12355204d01e7b879ba.jpg" width="250">
+<img src="https://github.com/Kurubaran-18/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195736.jpg?raw=true" width="250">   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/Kurubaran-18/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195748.jpg?raw=true" width="250" style="float:right"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="https://github.com/Kurubaran-18/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195756.jpg?raw=true" width="250">
 
- 
-
+<img src="https://github.com/Kurubaran-18/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195823.jpg?raw=true" width="250">   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/Kurubaran-18/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195837.jpg?raw=true" width="250" style="float:right"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="https://github.com/Kurubaran-18/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195853.jpg?raw=true" width="250">
 
 ## Salient Features: 
  - live confirmed, active, recovered and decreased cases
@@ -37,7 +36,3 @@ The idea behind this application is to displays the statistics of Coronavirus CO
 [bottom_navy_bar](https://pub.dev/packages/bottom_navy_bar) | Bottom navigation
 
 #### if you like what you see, then please don't forget to star the repo...
-
-
-
-
