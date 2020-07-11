@@ -1,13 +1,13 @@
 # This is a generated file; do not edit or check into version control.
-connectivity=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity-0.4.8+6/
-connectivity_macos=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity_macos-0.1.0+3/
-flutter_stetho=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_stetho-0.5.2/
-path_provider=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.8/
-path_provider_macos=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-0.0.4+2/
-shared_preferences=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.7+3/
-shared_preferences_macos=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+9/
-shared_preferences_web=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-0.1.2+7/
-sqflite=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.0+1/
-url_launcher=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.4.10/
-url_launcher_macos=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-0.0.1+7/
-url_launcher_web=/home/ankit/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-0.1.1+6/
+connectivity=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\connectivity-0.4.8+6\\
+connectivity_macos=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\connectivity_macos-0.1.0+3\\
+flutter_stetho=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_stetho-0.5.2\\
+path_provider=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider-1.6.8\\
+path_provider_macos=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\path_provider_macos-0.0.4+2\\
+shared_preferences=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences-0.5.7+3\\
+shared_preferences_macos=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_macos-0.0.1+9\\
+shared_preferences_web=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\shared_preferences_web-0.1.2+7\\
+sqflite=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\sqflite-1.3.0+1\\
+url_launcher=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\url_launcher-5.4.10\\
+url_launcher_macos=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\url_launcher_macos-0.0.1+7\\
+url_launcher_web=C:\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\url_launcher_web-0.1.1+6\\

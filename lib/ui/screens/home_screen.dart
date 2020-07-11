@@ -1,12 +1,16 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:covid19_tracker_application/ui/screens/dashboard.dart';
 import 'package:covid19_tracker_application/ui/screens/details.dart';
+import 'package:covid19_tracker_application/ui/screens/health.dart';
 import 'package:covid19_tracker_application/ui/screens/indian_states.dart';
 import 'package:covid19_tracker_application/ui/screens/news_page.dart';
 import 'package:covid19_tracker_application/ui/screens/zones.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+//FontAwesome Icons
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -44,8 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
             DashBoard(),
             IndianStates(),
             Zones(),
+            Health(),
             NewsScreen(),
-            Details(),
+            //Details(),
           ],
         ),
       ),
@@ -76,15 +81,20 @@ class _HomeScreenState extends State<HomeScreen> {
             activeColor: Color(0xFFA05AB3),
           ),
           BottomNavyBarItem(
+            title: Text(' Health', style: GoogleFonts.montserrat()),
+            icon: Icon(FontAwesomeIcons.stethoscope),
+            activeColor: Color(0xFF28a745),
+          ),
+          BottomNavyBarItem(
             title: Text(' News', style: GoogleFonts.montserrat()),
             icon: Icon(Icons.explore),
             activeColor: Color(0xFFFFB339),
           ),
-          BottomNavyBarItem(
+          /*BottomNavyBarItem(
             title: Text(' Facts', style: GoogleFonts.montserrat()),
             icon: Icon(Icons.lightbulb_outline),
             activeColor: Color(0xFF299489),
-          ),
+          ),*/
         ],
       ),
     );

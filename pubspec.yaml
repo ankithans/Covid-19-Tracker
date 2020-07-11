@@ -46,6 +46,11 @@ dependencies:
   connectivity: ^0.4.8+6
   provider: ^4.1.2
 
+  #FontAwesome Icons
+  font_awesome_flutter: ^8.8.1
+
+  #Delayed Display
+  delayed_display: ^1.0.3
 
 dev_dependencies:
   flutter_test:

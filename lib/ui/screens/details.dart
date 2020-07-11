@@ -13,27 +13,37 @@ class Details extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Color(0xFF325384),),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        brightness: Brightness.light,
         backgroundColor: Colors.white,
-        elevation: 0.0,
-        title: Row(
+        centerTitle: true,
+        title: Column(
           children: <Widget>[
-            Text(
-              'Covid-19 ',
-              // textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(
-                color: Colors.blue,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'Facts',
-              // textAlign: TextAlign.center,
-              style: GoogleFonts.montserrat(
-                color: Color(0xFF325384),
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+            Row(
+              children: <Widget>[
+                Text(
+                  'Covid-19',
+                  style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  'Facts',
+                  style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF325384),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
