@@ -22,6 +22,7 @@ The idea behind this application is to displays the statistics of Coronavirus CO
  - zone wise districts of india
  - latest health news headlines in India
  - covid-19 virus facts
+ - with self-assessment test you can assess your health
  
  
  ## Packages used in Development:
