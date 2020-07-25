@@ -13,7 +13,7 @@ The idea behind this application is to displays the statistics of Coronavirus CO
 
 <img src="https://raw.githubusercontent.com/tushar821999/Covid-19-Tracker/master/Screenshots/Screenshot_20200711-195736.jpg" width="250">    &nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/tushar821999/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195748.jpg?raw=true" width="250" style="float:right"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="https://github.com/tushar821999/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195756.jpg?raw=true" width="250">
 
-<img src="https://github.com/tushar821999/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195813.jpg?raw=true" width="250">   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/tushar821999/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195823.jpg?raw=true" width="250" style="float:right"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="https://github.com/tushar821999/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195853.jpg?raw=true" width="250">
+<img src="https://github.com/tushar821999/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195813.jpg?raw=true" width="250">   &nbsp;&nbsp;&nbsp;&nbsp;  <img src="https://github.com/tushar821999/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195823.jpg?raw=true" width="250" style="float:right"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="https://github.com/tushar821999/Covid-19-Tracker/blob/master/Screenshots/Screenshot_20200711-195853.jpg?raw=true" width="250">
 
 ## Salient Features: 
  - live confirmed, active, recovered and decreased cases
