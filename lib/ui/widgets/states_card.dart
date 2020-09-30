@@ -58,13 +58,13 @@ class StatesCard extends StatelessWidget {
                     overflow: TextOverflow.clip,
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.w600,
-                      fontSize: 16,
+                      fontSize: 15,
                       color: Color(0xFF325399),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 6,
+                  height: stateName.length > 10 ? 20.w : 50.w,
                 ),
                 Row(
                   children: <Widget>[
@@ -84,9 +84,6 @@ class StatesCard extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
-                SizedBox(
-                  height: 6.w,
                 ),
                 Row(
                   children: <Widget>[
@@ -108,9 +105,6 @@ class StatesCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 6.w,
-                ),
                 Row(
                   children: <Widget>[
                     Text(
@@ -130,9 +124,6 @@ class StatesCard extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
-                SizedBox(
-                  height: 6.w,
                 ),
                 Row(
                   children: <Widget>[
