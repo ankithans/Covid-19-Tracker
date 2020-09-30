@@ -6,7 +6,6 @@ import 'package:covid19_tracker_application/health/chat_chip.dart';
 import 'package:covid19_tracker_application/health/chat_data.dart';
 
 class Health extends StatefulWidget {
-
   @override
   _HealthState createState() => _HealthState();
 }
@@ -102,7 +101,7 @@ class _HealthState extends State<Health> with TickerProviderStateMixin {
               } else if (currentChat == chatDatas.length) {
                 currentChat++;
                 TestScore testScore =
-                TestScore(problems: problemsCount, totalProblems: 12);
+                    TestScore(problems: problemsCount, totalProblems: 12);
                 addTestScore(testScore.getCoronaScore());
                 setState(() {});
               }
@@ -136,7 +135,10 @@ class _HealthState extends State<Health> with TickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFF325384),),
+          icon: Icon(
+            Icons.arrow_back,
+            color: Color(0xFF325384),
+          ),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -171,7 +173,7 @@ class _HealthState extends State<Health> with TickerProviderStateMixin {
           ],
         ),
       ),
-      body : Material(
+      body: Material(
         child: SingleChildScrollView(
           padding: EdgeInsets.only(bottom: height * 0.2),
           controller: _scrollController,

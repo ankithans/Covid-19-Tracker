@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
@@ -44,13 +45,16 @@ class StatesCard extends StatelessWidget {
         child: Row(
           children: <Widget>[
             Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  height: 60.w,
+                  // height: 60.w,
                   width: 480.w,
-                  child: Text(
+                  child: AutoSizeText(
                     stateName,
+                    maxLines: 2,
                     overflow: TextOverflow.clip,
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.w600,
