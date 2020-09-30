@@ -23,14 +23,14 @@ dependencies:
   equatable: ^1.1.1
   dio: ^3.0.9
   flutter_screenutil: ^1.1.0
-  number_display:
+  number_display: null
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flutter_sparkline: ^0.1.0
   google_fonts: ^1.0.0
-  bottom_navy_bar:
-  scroll_snap_list:
+  bottom_navy_bar: null
+  scroll_snap_list: null
   flutter_spinkit: ^4.1.2+1
   json_serializable: ^3.3.0
   cached_network_image: ^2.2.0+1
@@ -41,11 +41,11 @@ dependencies:
   theme_provider: ^0.3.3
   flutter_launcher_icons: ^0.7.5
   introduction_screen: ^1.0.8
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.18.0
   getflutter: ^1.0.11
   connectivity: ^0.4.8+6
   provider: ^4.1.2
-
+  auto_size_text: ^2.1.0
   #FontAwesome Icons
   font_awesome_flutter: ^8.8.1
 
@@ -56,6 +56,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+dependency_overrides:
+  flutter_stetho:
+    git:
+      url: git://github.com/jasonlewicki/flutter_stetho.git
+      ref: master
+
 flutter_icons:
   android: "launcher_icon"
   ios: true
@@ -63,7 +69,6 @@ flutter_icons:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
   # The following line ensures that the Material Icons font is
@@ -72,11 +77,11 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/images/
-   - assets/pec/
-   - assets/facts/
-  #  - assets/facts/travel_advice/
-   - assets/svg/
+    - assets/images/
+    - assets/pec/
+    - assets/facts/
+    #  - assets/facts/travel_advice/
+    - assets/svg/
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

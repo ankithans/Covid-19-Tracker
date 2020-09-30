@@ -47,29 +47,21 @@ class DataTextChart extends StatelessWidget {
                     color: titleColor,
                   ),
                 ),
-                Row(
-                  children: <Widget>[
-                    Text(
-                      number,
-                      style: GoogleFonts.montserrat(
-                        fontWeight: FontWeight.bold,
-                        color: numberColor,
-                        fontSize: 22,
-                      ),
-                    ),
-                    SizedBox(
-                      // height: 15.w,
-                      width: 25.w,
-                    ),
-                    Text(
-                      deltaNumber,
-                      style: GoogleFonts.montserrat(
-                        color: deltaNumberColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
+                Text(
+                  number,
+                  style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.bold,
+                    color: numberColor,
+                    fontSize: 22,
+                  ),
+                ),
+                Text(
+                  deltaNumber,
+                  style: GoogleFonts.montserrat(
+                    color: deltaNumberColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 SizedBox(
                   height: 30.w,

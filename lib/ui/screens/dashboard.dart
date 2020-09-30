@@ -5,11 +5,9 @@ import 'package:covid19_tracker_application/ui/widgets/info_card.dart';
 import 'package:covid19_tracker_application/ui/widgets/loading.dart';
 import 'package:covid19_tracker_application/ui/widgets/most_affected_states.dart';
 import 'package:covid19_tracker_application/ui/widgets/noNetwork.dart';
-import 'package:covid19_tracker_application/ui/widgets/requirements.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:number_display/number_display.dart';
 import 'package:provider/provider.dart';
@@ -172,7 +170,7 @@ class _DashBoardState extends State<DashBoard>
                           Padding(
                             padding: EdgeInsets.only(top: 10),
                             child: Container(
-                              height: 950.w,
+                              // height: 1050.w,
                               decoration: BoxDecoration(
                                 color: Colors.grey[200],
                                 borderRadius: BorderRadius.circular(30.w),
