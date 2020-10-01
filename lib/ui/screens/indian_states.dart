@@ -1,3 +1,4 @@
+
 import 'package:covid19_tracker_application/bloc/covid_19_bloc.dart';
 import 'package:covid19_tracker_application/repositories/enums.dart';
 import 'package:covid19_tracker_application/ui/widgets/loading.dart';
@@ -101,35 +102,44 @@ class _IndianStatesState extends State<IndianStates>
                       physics: BouncingScrollPhysics(),
                       itemCount: statesLength.length - 1,
                       itemBuilder: (context, index) {
-                        return Padding(
-                          padding: EdgeInsets.only(
-                            top: ScreenUtil().setWidth(40),
-                            left: ScreenUtil().setWidth(30),
-                            right: ScreenUtil().setWidth(30),
-                          ),
-                          child: StatesCard(
-                            stateName: totalData1['statewise'][index + 1]
-                                ['state'],
-                            confirmed: display(int.parse(totalData1['statewise']
-                                [index + 1]['confirmed'])),
-                            deltaConfirmed: display(int.parse(
-                                totalData1['statewise'][index + 1]
-                                    ['deltaconfirmed'])),
-                            active: display(int.parse(
-                                totalData1['statewise'][index + 1]['active'])),
-                            recovered: display(int.parse(totalData1['statewise']
-                                [index + 1]['recovered'])),
-                            deltaRecovered: display(int.parse(
-                                totalData1['statewise'][index + 1]
-                                    ['deltarecovered'])),
-                            decreased: display(int.parse(
-                                totalData1['statewise'][index + 1]['deaths'])),
-                            deltaDecreased: display(int.parse(
-                                totalData1['statewise'][index + 1]
-                                    ['deltadeaths'])),
-                            data: _generateConfirmedData(index + 1),
-                          ),
-                        );
+                        print(totalData1['statewise'][index + 1]['state']);
+                        if (totalData1['statewise'][index + 1]['state'] ==
+                            "State Unassigned") {
+                          return SizedBox(height: 0.0);
+                        } else {
+                          return Padding(
+                            padding: EdgeInsets.only(
+                              top: ScreenUtil().setWidth(40),
+                              left: ScreenUtil().setWidth(30),
+                              right: ScreenUtil().setWidth(30),
+                            ),
+                            child: StatesCard(
+                              stateName: totalData1['statewise'][index + 1]
+                                  ['state'],
+                              confirmed: display(int.parse(
+                                  totalData1['statewise'][index + 1]
+                                      ['confirmed'])),
+                              deltaConfirmed: display(int.parse(
+                                  totalData1['statewise'][index + 1]
+                                      ['deltaconfirmed'])),
+                              active: display(int.parse(totalData1['statewise']
+                                  [index + 1]['active'])),
+                              recovered: display(int.parse(
+                                  totalData1['statewise'][index + 1]
+                                      ['recovered'])),
+                              deltaRecovered: display(int.parse(
+                                  totalData1['statewise'][index + 1]
+                                      ['deltarecovered'])),
+                              decreased: display(int.parse(
+                                  totalData1['statewise'][index + 1]
+                                      ['deaths'])),
+                              deltaDecreased: display(int.parse(
+                                  totalData1['statewise'][index + 1]
+                                      ['deltadeaths'])),
+                              data: _generateConfirmedData(index + 1),
+                            ),
+                          );
+                        }
                       },
                     );
                   }
