@@ -134,16 +134,6 @@ class _HealthState extends State<Health> with TickerProviderStateMixin {
     });
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Color(0xFF325384),
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          //onPressed: () => Navigator.of(context).pop(),
-        ),
         brightness: Brightness.light,
         backgroundColor: Colors.white,
         centerTitle: true,
