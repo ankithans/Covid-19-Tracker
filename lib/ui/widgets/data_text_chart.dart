@@ -1,3 +1,4 @@
+import 'package:covid19_tracker_application/models/regex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
@@ -48,7 +49,7 @@ class DataTextChart extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  number,
+                  addSeperator(number),
                   style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.bold,
                     color: numberColor,
@@ -56,7 +57,7 @@ class DataTextChart extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  deltaNumber,
+                  addSeperator(deltaNumber),
                   style: GoogleFonts.montserrat(
                     color: deltaNumberColor,
                     fontSize: 14,
