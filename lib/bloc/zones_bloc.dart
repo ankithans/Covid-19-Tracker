@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:covid19_tracker_application/bloc/covid_19_bloc.dart';
 import 'package:covid19_tracker_application/repositories/api_repository.dart';
 import 'package:equatable/equatable.dart';
 

@@ -1,5 +1,5 @@
-
 import 'package:covid19_tracker_application/bloc/covid_19_bloc.dart';
+import 'package:covid19_tracker_application/models/regex.dart';
 import 'package:covid19_tracker_application/repositories/enums.dart';
 import 'package:covid19_tracker_application/ui/widgets/loading.dart';
 import 'package:covid19_tracker_application/ui/widgets/noNetwork.dart';
@@ -116,26 +116,23 @@ class _IndianStatesState extends State<IndianStates>
                             child: StatesCard(
                               stateName: totalData1['statewise'][index + 1]
                                   ['state'],
-                              confirmed: display(int.parse(
+                              confirmed: addSeperator(totalData1['statewise']
+                                  [index + 1]['confirmed']),
+                              deltaConfirmed: addSeperator(
                                   totalData1['statewise'][index + 1]
-                                      ['confirmed'])),
-                              deltaConfirmed: display(int.parse(
+                                      ['deltaconfirmed']),
+                              active: addSeperator(
+                                  totalData1['statewise'][index + 1]['active']),
+                              recovered: addSeperator(totalData1['statewise']
+                                  [index + 1]['recovered']),
+                              deltaRecovered: addSeperator(
                                   totalData1['statewise'][index + 1]
-                                      ['deltaconfirmed'])),
-                              active: display(int.parse(totalData1['statewise']
-                                  [index + 1]['active'])),
-                              recovered: display(int.parse(
+                                      ['deltarecovered']),
+                              decreased: addSeperator(
+                                  totalData1['statewise'][index + 1]['deaths']),
+                              deltaDecreased: addSeperator(
                                   totalData1['statewise'][index + 1]
-                                      ['recovered'])),
-                              deltaRecovered: display(int.parse(
-                                  totalData1['statewise'][index + 1]
-                                      ['deltarecovered'])),
-                              decreased: display(int.parse(
-                                  totalData1['statewise'][index + 1]
-                                      ['deaths'])),
-                              deltaDecreased: display(int.parse(
-                                  totalData1['statewise'][index + 1]
-                                      ['deltadeaths'])),
+                                      ['deltadeaths']),
                               data: _generateConfirmedData(index + 1),
                             ),
                           );

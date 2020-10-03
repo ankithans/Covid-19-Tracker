@@ -1,3 +1,4 @@
+import 'package:covid19_tracker_application/models/regex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -54,7 +55,7 @@ class InfoCard extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                number,
+                addSeperator(number),
                 style: GoogleFonts.montserrat(
                   fontSize: 21,
                   color: numberColor,
