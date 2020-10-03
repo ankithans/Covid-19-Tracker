@@ -16,12 +16,12 @@ class Details extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFF325384),),
+          icon: Icon(
+            Icons.arrow_back,
+            color: Color(0xFF325384),
+          ),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
-            );
+            Navigator.pop(context);
           },
         ),
         brightness: Brightness.light,
