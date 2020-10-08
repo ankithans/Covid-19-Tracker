@@ -1,3 +1,4 @@
+import 'package:covid19_tracker_application/models/regex.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:number_display/number_display.dart';
@@ -42,9 +43,8 @@ class MostAffectedStates extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        display(int.parse(
-                                totalData['statewise'][index]['confirmed']))
-                            .toString(),
+                        addSeperator(
+                            totalData['statewise'][index]['confirmed']),
                         style: GoogleFonts.montserrat(
                           color: Colors.red,
                           fontWeight: FontWeight.bold,

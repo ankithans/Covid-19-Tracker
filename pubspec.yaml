@@ -19,38 +19,33 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^6.0.6
-  equatable: ^1.1.1
-  dio: ^3.0.9
-  flutter_screenutil: ^1.1.0
-  number_display: null
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
-  flutter_sparkline: ^0.1.0
-  google_fonts: ^1.0.0
-  bottom_navy_bar: null
-  scroll_snap_list: null
-  flutter_spinkit: ^4.1.2+1
-  json_serializable: ^3.3.0
-  cached_network_image: ^2.2.0+1
-  intl: ^0.16.1
-  url_launcher: ^5.4.10
-  flutter_stetho: ^0.5.2
-  line_awesome_icons: ^1.0.4+2
-  theme_provider: ^0.3.3
-  flutter_launcher_icons: ^0.7.5
-  introduction_screen: ^1.0.8
-  flutter_svg: ^0.18.0
-  getflutter: ^1.0.11
-  connectivity: ^0.4.8+6
-  provider: ^4.1.2
   auto_size_text: ^2.1.0
-  #FontAwesome Icons
-  font_awesome_flutter: ^8.8.1
-
-  #Delayed Display
+  bottom_navy_bar: null
+  cached_network_image: ^2.2.0+1
+  connectivity: ^0.4.8+6
+  cupertino_icons: ^0.1.2
   delayed_display: ^1.0.3
+  dio: ^3.0.9
+  equatable: ^1.1.1
+  flutter_bloc: ^6.0.6
+  flutter_launcher_icons: ^0.7.5
+  flutter_screenutil: ^1.1.0
+  flutter_sparkline: ^0.1.0
+  flutter_spinkit: ^4.1.2+1
+  flutter_stetho: ^0.5.2
+  flutter_svg: ^0.18.0
+  font_awesome_flutter: ^8.8.1
+  getflutter: ^1.0.11
+  google_fonts: ^1.0.0
+  intl: ^0.16.1
+  introduction_screen: ^1.0.8
+  json_serializable: ^3.3.0
+  line_awesome_icons: ^1.0.4+2
+  number_display: ^2.3.0
+  provider: ^4.1.2
+  scroll_snap_list: null
+  theme_provider: ^0.3.3
+  url_launcher: ^5.4.10
 
 dev_dependencies:
   flutter_test:
