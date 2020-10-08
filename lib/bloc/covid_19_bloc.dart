@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:covid19_tracker_application/models/models.dart';
-import 'package:covid19_tracker_application/repositories/repositories.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-
+import 'package:covid19_tracker_application/models/models.dart';
+import 'package:covid19_tracker_application/repositories/repositories.dart';
 import '../models/general_data_model.dart';
 
 abstract class Covid_19Event extends Equatable {
@@ -72,9 +71,10 @@ class CaseError extends Covid_19State {}
 class Covid_19Bloc extends Bloc<Covid_19Event, Covid_19State> {
   final ApiRepository apiRepository;
 
-  Covid_19Bloc({@required this.apiRepository}) : assert(apiRepository != null);
+  Covid_19Bloc({@required this.apiRepository})
+      : assert(apiRepository != null),
+        super(null);
 
-  @override
   Covid_19State get initialState => CaseEmpty();
 
   @override

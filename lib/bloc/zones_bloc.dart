@@ -49,8 +49,10 @@ class ZoneError extends ZonesState {}
 class ZonesBloc extends Bloc<ZonesEvent, ZonesState> {
   final ApiRepository apiRepository;
 
-  ZonesBloc({this.apiRepository}) : assert(apiRepository != null);
-  @override
+  ZonesBloc({this.apiRepository})
+      : assert(apiRepository != null),
+        super(null);
+  // @override
   ZonesState get initialState => ZoneEmpty();
 
   @override

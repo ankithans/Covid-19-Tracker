@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:covid19_tracker_application/models/topheadlinesnews/response_top_headlinews_news.dart';
+import 'package:covid19_tracker_application/repositories/api_client.dart';
 import 'package:covid19_tracker_application/repositories/api_repository.dart';
 
 abstract class DataState {}
@@ -23,13 +24,15 @@ class DataFailed extends DataState {
 class DataEvent {}
 
 class HomeBloc extends Bloc<DataEvent, DataState> {
-  @override
+  HomeBloc(DataState initialState) : super(initialState);
+
+  //@override
   DataState get initialState => DataInitial();
 
   @override
   Stream<DataState> mapEventToState(DataEvent event) async* {
     yield DataLoading();
-    final apiRepository = ApiRepository();
+    final apiRepository = ApiRepository(apiClient: ApiClient());
 
     final data = await apiRepository.fetchTopHeadlinesNews();
     if (data.error == null) {
