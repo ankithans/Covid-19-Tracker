@@ -2,7 +2,7 @@
 
 # Covid-19 Tracker application:
 
-The idea behind this application is to displays the statistics of Coronavirus COVID-19 in :india:India and the data are being collected from [https://api.covid19india.org/](https://api.covid19india.org/) and it updates the cases constantly on this app in India.
+The idea behind this application is to display the statistics of Coronavirus COVID-19 in :india:India and the data are being collected from [https://api.covid19india.org/](https://api.covid19india.org/) and it updates the cases constantly on this app in India.
 
 <img src="https://github.com/ankithans/Covid-19-Tracker/blob/master/mockup/COVID.PNG" >
 
