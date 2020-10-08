@@ -18,7 +18,7 @@ void main() {
   final ApiRepository apiRepository = ApiRepository(
     apiClient: ApiClient(),
   );
-  BlocSupervisor.delegate = SimpleBlocDelegate();
+  Bloc.observer = SimpleBlocObserver();
 
   runApp(MultiBlocProvider(
     providers: [
@@ -26,7 +26,7 @@ void main() {
           create: (context) => Covid_19Bloc(apiRepository: apiRepository)),
       BlocProvider(
           create: (context) => ZonesBloc(apiRepository: apiRepository)),
-      BlocProvider(create: (context) => HomeBloc()),
+      BlocProvider(create: (context) => HomeBloc(DataInitial())),
     ],
     child: MyApp(
       apiRepository: apiRepository,
@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
               home: BlocProvider(
-                create: (context) => HomeBloc(),
+                create: (context) => HomeBloc(DataInitial()),
                 child: BlocProvider(
                   create: (context) => ZonesBloc(
                     apiRepository: apiRepository,

@@ -40,7 +40,7 @@ class NewsScreen extends StatelessWidget {
       body: connectionStatus == ConnectivityStatus.offline
           ? NoNetwork()
           : BlocProvider<HomeBloc>(
-              create: (context) => HomeBloc(),
+              create: (context) => HomeBloc(DataInitial()),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -178,7 +178,7 @@ class _WidgetLatestNewsState extends State<WidgetLatestNews> {
           }
         },
         child: BlocBuilder(
-          bloc: homeBloc,
+          cubit: homeBloc,
           builder: (BuildContext context, DataState state) {
             return _buildWidgetContentLatestNews(state, mediaQuery);
           },
