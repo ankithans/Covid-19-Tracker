@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:covid19_tracker_application/repositories/api_repository.dart';
 import 'package:equatable/equatable.dart';
+import 'package:rxdart/rxdart.dart';
 
 abstract class ZonesEvent extends Equatable {
   const ZonesEvent();
@@ -52,7 +53,18 @@ class ZonesBloc extends Bloc<ZonesEvent, ZonesState> {
   ZonesBloc({this.apiRepository})
       : assert(apiRepository != null),
         super(null);
-  // @override
+
+  @override
+  Stream<Transition<ZonesEvent, ZonesState>> transformEvents(
+    Stream<ZonesEvent> events,
+    TransitionFunction<ZonesEvent, ZonesState> transitionFn,
+  ) {
+    return super.transformEvents(
+      events.debounceTime(Duration(milliseconds: 500)),
+      transitionFn,
+    );
+  }
+
   ZonesState get initialState => ZoneEmpty();
 
   @override

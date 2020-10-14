@@ -26,7 +26,6 @@ class DataEvent {}
 class HomeBloc extends Bloc<DataEvent, DataState> {
   HomeBloc(DataState initialState) : super(initialState);
 
-  //@override
   DataState get initialState => DataInitial();
 
   @override

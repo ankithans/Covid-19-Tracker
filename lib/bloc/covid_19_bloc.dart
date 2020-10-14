@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:covid19_tracker_application/models/models.dart';
 import 'package:covid19_tracker_application/repositories/repositories.dart';
 import '../models/general_data_model.dart';
+import 'package:rxdart/rxdart.dart';
 
 abstract class Covid_19Event extends Equatable {
   const Covid_19Event();
@@ -74,6 +75,17 @@ class Covid_19Bloc extends Bloc<Covid_19Event, Covid_19State> {
   Covid_19Bloc({@required this.apiRepository})
       : assert(apiRepository != null),
         super(null);
+
+  @override
+  Stream<Transition<Covid_19Event, Covid_19State>> transformEvents(
+    Stream<Covid_19Event> events,
+    TransitionFunction<Covid_19Event, Covid_19State> transitionFn,
+  ) {
+    return super.transformEvents(
+      events.debounceTime(const Duration(milliseconds: 500)),
+      transitionFn,
+    );
+  }
 
   Covid_19State get initialState => CaseEmpty();
 
