@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:covid19_tracker_application/bloc/covid_19_bloc.dart';
 import 'package:covid19_tracker_application/models/regex.dart';
 import 'package:covid19_tracker_application/repositories/enums.dart';
@@ -18,6 +20,14 @@ class IndianStates extends StatefulWidget {
 
 class _IndianStatesState extends State<IndianStates>
     with AutomaticKeepAliveClientMixin {
+  Completer<void> _refreshCompleter;
+
+  @override
+  void initState() {
+    super.initState();
+    _refreshCompleter = Completer<void>();
+  }
+
   @override
   void didChangeDependencies() {
     BlocProvider.of<Covid_19Bloc>(context).add(FetchCase());
@@ -65,7 +75,13 @@ class _IndianStatesState extends State<IndianStates>
         ),
         body: connectionStatus == ConnectivityStatus.offline
             ? NoNetwork()
-            : BlocBuilder<Covid_19Bloc, Covid_19State>(
+            : BlocConsumer<Covid_19Bloc, Covid_19State>(
+                listener: (context, state) {
+                  if (state is CaseLoaded) {
+                    _refreshCompleter?.complete();
+                    _refreshCompleter = Completer();
+                  }
+                },
                 builder: (context, state) {
                   if (state is CaseLoading) {
                     return Center(
@@ -98,46 +114,54 @@ class _IndianStatesState extends State<IndianStates>
                     // print(totalData1['statewise'][1]['statecode'].toLowerCase());
                     // print(stateDailyData['states_daily'][0]
                     //     [totalData1['statewise'][1]['statecode'].toLowerCase()]);
-                    return ListView.builder(
-                      physics: BouncingScrollPhysics(),
-                      itemCount: statesLength.length - 1,
-                      itemBuilder: (context, index) {
-                        print(totalData1['statewise'][index + 1]['state']);
-                        if (totalData1['statewise'][index + 1]['state'] ==
-                            "State Unassigned") {
-                          return SizedBox(height: 0.0);
-                        } else {
-                          return Padding(
-                            padding: EdgeInsets.only(
-                              top: ScreenUtil().setWidth(40),
-                              left: ScreenUtil().setWidth(30),
-                              right: ScreenUtil().setWidth(30),
-                            ),
-                            child: StatesCard(
-                              stateName: totalData1['statewise'][index + 1]
-                                  ['state'],
-                              confirmed: addSeperator(totalData1['statewise']
-                                  [index + 1]['confirmed']),
-                              deltaConfirmed: addSeperator(
-                                  totalData1['statewise'][index + 1]
-                                      ['deltaconfirmed']),
-                              active: addSeperator(
-                                  totalData1['statewise'][index + 1]['active']),
-                              recovered: addSeperator(totalData1['statewise']
-                                  [index + 1]['recovered']),
-                              deltaRecovered: addSeperator(
-                                  totalData1['statewise'][index + 1]
-                                      ['deltarecovered']),
-                              decreased: addSeperator(
-                                  totalData1['statewise'][index + 1]['deaths']),
-                              deltaDecreased: addSeperator(
-                                  totalData1['statewise'][index + 1]
-                                      ['deltadeaths']),
-                              data: _generateConfirmedData(index + 1),
-                            ),
-                          );
-                        }
+                    return RefreshIndicator(
+                      onRefresh: () {
+                        BlocProvider.of<Covid_19Bloc>(context).add(
+                          CovidRefreshRequested(),
+                        );
+                        return _refreshCompleter.future;
                       },
+                      child: ListView.builder(
+                        physics: BouncingScrollPhysics(),
+                        itemCount: statesLength.length - 1,
+                        itemBuilder: (context, index) {
+                          print(totalData1['statewise'][index + 1]['state']);
+                          if (totalData1['statewise'][index + 1]['state'] ==
+                              "State Unassigned") {
+                            return SizedBox(height: 0.0);
+                          } else {
+                            return Padding(
+                              padding: EdgeInsets.only(
+                                top: ScreenUtil().setWidth(40),
+                                left: ScreenUtil().setWidth(30),
+                                right: ScreenUtil().setWidth(30),
+                              ),
+                              child: StatesCard(
+                                stateName: totalData1['statewise'][index + 1]
+                                    ['state'],
+                                confirmed: addSeperator(totalData1['statewise']
+                                    [index + 1]['confirmed']),
+                                deltaConfirmed: addSeperator(
+                                    totalData1['statewise'][index + 1]
+                                        ['deltaconfirmed']),
+                                active: addSeperator(totalData1['statewise']
+                                    [index + 1]['active']),
+                                recovered: addSeperator(totalData1['statewise']
+                                    [index + 1]['recovered']),
+                                deltaRecovered: addSeperator(
+                                    totalData1['statewise'][index + 1]
+                                        ['deltarecovered']),
+                                decreased: addSeperator(totalData1['statewise']
+                                    [index + 1]['deaths']),
+                                deltaDecreased: addSeperator(
+                                    totalData1['statewise'][index + 1]
+                                        ['deltadeaths']),
+                                data: _generateConfirmedData(index + 1),
+                              ),
+                            );
+                          }
+                        },
+                      ),
                     );
                   }
                   if (state is CaseError) {
