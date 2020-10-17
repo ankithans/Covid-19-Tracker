@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:covid19_tracker_application/models/models.dart';
 import 'package:covid19_tracker_application/repositories/repositories.dart';
 import '../models/general_data_model.dart';
-import 'package:rxdart/rxdart.dart';
 
 abstract class Covid_19Event extends Equatable {
   const Covid_19Event();
@@ -17,6 +16,11 @@ class FetchCase extends Covid_19Event {
 }
 
 class RefreshCase extends Covid_19Event {
+  @override
+  List<Object> get props => [];
+}
+
+class CovidRefreshRequested extends Covid_19Event {
   @override
   List<Object> get props => [];
 }
@@ -76,17 +80,6 @@ class Covid_19Bloc extends Bloc<Covid_19Event, Covid_19State> {
       : assert(apiRepository != null),
         super(null);
 
-  @override
-  Stream<Transition<Covid_19Event, Covid_19State>> transformEvents(
-    Stream<Covid_19Event> events,
-    TransitionFunction<Covid_19Event, Covid_19State> transitionFn,
-  ) {
-    return super.transformEvents(
-      events.debounceTime(const Duration(milliseconds: 500)),
-      transitionFn,
-    );
-  }
-
   Covid_19State get initialState => CaseEmpty();
 
   @override
@@ -95,6 +88,8 @@ class Covid_19Bloc extends Bloc<Covid_19Event, Covid_19State> {
   ) async* {
     if (event is FetchCase) {
       yield* _mapFetchCaseToState(event);
+    } else if (event is CovidRefreshRequested) {
+      yield* _mapCovidRefreshRequestedToState(event);
     }
   }
 
@@ -125,5 +120,31 @@ class Covid_19Bloc extends Bloc<Covid_19Event, Covid_19State> {
     } catch (_) {
       yield CaseError();
     }
+  }
+
+  Stream<Covid_19State> _mapCovidRefreshRequestedToState(
+    CovidRefreshRequested event,
+  ) async* {
+    try {
+      final allData = await apiRepository.getAllData();
+      final totalData = await apiRepository.fetchTotalData();
+      final List chartData = await apiRepository.fetchChartData();
+      final Map testData = await apiRepository.fetchTestData();
+      final List statesLength = await apiRepository.fetchStatesLength();
+      final stateDailyData = await apiRepository.fetchStatesDailyData();
+      final List stateDailyDataLength =
+          await apiRepository.fetchStatesDailyDataLength();
+      yield CaseLoaded(
+        statewise: allData.statewise[0],
+        casesTimeSery: allData.casesTimeSeries[0],
+        tested: allData.tested[0],
+        totalData: totalData,
+        chartData: chartData,
+        testData: testData,
+        statesLength: statesLength,
+        stateDailyData: stateDailyData,
+        stateDailyDataLength: stateDailyDataLength,
+      );
+    } catch (_) {}
   }
 }
