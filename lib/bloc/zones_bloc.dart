@@ -29,6 +29,7 @@ class ZoneEmpty extends ZonesState {}
 class ZoneLoading extends ZonesState {}
 
 class ZoneLoaded extends ZonesState {
+  // final
   final zoneData;
   final List zoneDataLength;
 
@@ -61,11 +62,29 @@ class ZonesBloc extends Bloc<ZonesEvent, ZonesState> {
   ) async* {
     if (event is FetchZone) {
       yield* _mapFetchZoneToState(event);
+    } else if (event is RefreshZone) {
+      yield* _mapZonesRefreshRequestedToState(event);
     }
   }
 
   Stream<ZonesState> _mapFetchZoneToState(FetchZone event) async* {
     yield ZoneLoading();
+    try {
+      final zoneData = await apiRepository.fetchZoneData();
+      final List zoneDataLength = await apiRepository.fetchZoneDataLength();
+
+      yield ZoneLoaded(
+        zoneData: zoneData,
+        zoneDataLength: zoneDataLength,
+      );
+    } catch (_) {
+      yield ZoneError();
+    }
+  }
+
+  Stream<ZonesState> _mapZonesRefreshRequestedToState(
+    RefreshZone event,
+  ) async* {
     try {
       final zoneData = await apiRepository.fetchZoneData();
       final List zoneDataLength = await apiRepository.fetchZoneDataLength();

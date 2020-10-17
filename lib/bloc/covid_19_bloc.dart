@@ -22,6 +22,7 @@ class RefreshCase extends Covid_19Event {
 
 class CovidRefreshRequested extends Covid_19Event {
   @override
+  // TODO: implement props
   List<Object> get props => [];
 }
 
