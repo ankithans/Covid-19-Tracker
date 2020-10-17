@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:covid19_tracker_application/bloc/zones_bloc.dart';
 import 'package:covid19_tracker_application/repositories/enums.dart';
 import 'package:covid19_tracker_application/ui/widgets/loading.dart';
@@ -6,6 +8,7 @@ import 'package:covid19_tracker_application/ui/widgets/search_districts.dart';
 import 'package:covid19_tracker_application/ui/widgets/zone_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +18,14 @@ class Zones extends StatefulWidget {
 }
 
 class _ZonesState extends State<Zones> with AutomaticKeepAliveClientMixin {
+  Completer<void> _refreshCompleter;
+
+  @override
+  void initState() {
+    super.initState();
+    _refreshCompleter = Completer<void>();
+  }
+
   @override
   void didChangeDependencies() {
     BlocProvider.of<ZonesBloc>(context).add(FetchZone());
@@ -73,17 +84,21 @@ class _ZonesState extends State<Zones> with AutomaticKeepAliveClientMixin {
       ),
       body: connectionStatus == ConnectivityStatus.offline
           ? NoNetwork()
-          : BlocBuilder<ZonesBloc, ZonesState>(
-              builder: (BuildContext context, ZonesState state) {
+          : BlocConsumer<ZonesBloc, ZonesState>(
+              listener: (context, state) {
+                if (state is ZoneLoaded) {
+                  _refreshCompleter?.complete();
+                  _refreshCompleter = Completer();
+                }
+              },
+              builder: (context, state) {
                 if (state is ZoneLoading) {
-                  return Center(
-                    child: Loading(),
-                  );
+                  return Center(child: Loading());
                 }
                 if (state is ZoneLoaded) {
                   zoneLoad = true;
-                  zoneData = state.zoneData;
-                  zoneDataLength = state.zoneDataLength;
+                  final zoneData = state.zoneData;
+                  final zoneDataLength = state.zoneDataLength;
                   // final Color a = zoneData['zones'][1]['zone'].toLowerCase();
                   // print(a);
 
@@ -109,26 +124,36 @@ class _ZonesState extends State<Zones> with AutomaticKeepAliveClientMixin {
 
                   // print(zoneData);
 
-                  return ListView.builder(
-                    physics: BouncingScrollPhysics(),
-                    itemCount: zoneDataLength.length,
-                    // shrinkWrap: true,
-                    // physics: AlwaysScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return ZoneCard(
-                        color: zoneColor(index),
-                        district: zoneData['zones'][index]['district'],
-                        state: zoneData['zones'][index]['state'],
-                        textColor: textColor(index),
+                  return RefreshIndicator(
+                    onRefresh: () {
+                      BlocProvider.of<ZonesBloc>(context).add(
+                        RefreshZone(),
                       );
+                      return _refreshCompleter.future;
                     },
+                    child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: zoneDataLength.length,
+                      // shrinkWrap: true,
+                      // physics: AlwaysScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return ZoneCard(
+                          color: zoneColor(index),
+                          district: zoneData['zones'][index]['district'],
+                          state: zoneData['zones'][index]['state'],
+                          textColor: textColor(index),
+                        );
+                      },
+                    ),
                   );
                 }
                 if (state is ZoneError) {
                   return Text('Something went wrong!');
                 }
                 return Center(
-                  child: CircularProgressIndicator(),
+                  child: SpinKitFadingCube(
+                    color: Colors.blue,
+                  ),
                 );
               },
             ),

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:covid19_tracker_application/bloc/covid_19_bloc.dart';
+import 'package:covid19_tracker_application/bloc/zones_bloc.dart';
 import 'package:covid19_tracker_application/repositories/enums.dart';
 import 'package:covid19_tracker_application/ui/widgets/data_text_chart.dart';
 import 'package:covid19_tracker_application/ui/widgets/info_card.dart';
@@ -109,6 +110,9 @@ class _DashBoardState extends State<DashBoard>
                 }
               },
               builder: (context, state) {
+                if (state is CaseLoading) {
+                  return Center(child: Loading());
+                }
                 if (state is CaseLoaded) {
                   final statewise = state.statewise;
                   final totalData1 = state.totalData;
